@@ -10,5 +10,9 @@ client = pymongo.MongoClient()
 db = client.amazon
 
 for product in db.products.find():
-    pprint.pprint(product['title'])
+    print("Title: " + product['title'])
+    print("Price: " + product['price'].replace('\n', '; '))
+    print("Category: " + product['category'].replace('\n', ' '))
+    print("URL: " + product['url'])
+    print("Rating: " + product['rating'])
     print "============================"
